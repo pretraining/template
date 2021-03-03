@@ -19,3 +19,11 @@ repos:
     -   id: sort-simple-yaml
     -   id: requirements-txt-fixer
     -   id: check-json
+-   repo: local
+    hooks:
+    -   id: pytest-check
+        name: pytest-check
+        entry: pytest
+        language: system
+        pass_filenames: false
+        always_run: true
