@@ -8,8 +8,6 @@ clean-pyc:
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test:
-	rm -f .coverage
-	rm -f .coverage.*
-	rm -rf .pytest_cache
+	rm -rf .coverage .coverage.* .pytest_cache .cache nosetests.xml coverage.xml *.cover .hypothesis pytestdebug.log
 
 clean: clean-pyc clean-test
