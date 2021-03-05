@@ -23,9 +23,6 @@ RUN adduser --disabled-password \
     --uid ${UID} \
     ${USER}
 
-# RUN adduser ${USER}
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
 USER ${USER}
 WORKDIR ${HOME}/workspace
 
