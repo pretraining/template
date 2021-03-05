@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=nvidia/cuda:11.2.1-cudnn8-runtime-ubuntu18.04
 
-FROM ${BASE_IMAGE} as base
+FROM ${BASE_IMAGE}
 ARG PYTHON_VERSION=3.7.9
 
 ENV USER user
