@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/thclark/pre-commit-sphinx
+    rev: 0.0.1
+    hooks:
+      - id: build-docs
+        args: ['--cache-dir', 'docs/doctrees', '--html-dir', 'docs/html', '--source-dir', 'docs/source']
+        language_version: python3
+  -   repo: local
+      hooks:
+      -   id: pytest-check
+          name: pytest-check
+          entry: pytest
+          language: system
+          pass_filenames: false
+          always_run: true
