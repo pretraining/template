@@ -1,7 +1,6 @@
-ARG UBUNTU_VERSION=18.04
-ARG BASE_IMAGE=nvidia/cuda:11.2.1-cudnn8-runtime-ubuntu
+ARG BASE_IMAGE=nvidia/cuda:11.2.1-cudnn8-runtime-ubuntu18.04
 
-FROM ${BASE_IMAGE}${UBUNTU_VERSION} as base
+FROM ${BASE_IMAGE} as base
 ARG PYTHON_VERSION=3.7.9
 
 ENV USER user
@@ -13,8 +12,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     vim \
-    sudo \
-    zsh \
     apt-utils \
     make \
     build-essential \
@@ -26,7 +23,7 @@ RUN adduser --disabled-password \
     --uid ${UID} \
     ${USER}
 
-RUN adduser ${USER} sudo
+# RUN adduser ${USER}
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER ${USER}
@@ -42,10 +39,7 @@ RUN pyenv install ${PYTHON_VER} && \
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
 # Setup pyenv 
-RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-RUN echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc 
-RUN chown -R ${UID} ${HOME}
+RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc 
 
-USER ${USER}
-WORKDIR ${HOME}/workspace
