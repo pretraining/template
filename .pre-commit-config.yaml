@@ -32,3 +32,18 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
+    -   id: coverage-run
+        name: Run coverage
+        entry: coverage run --source=. -m pytest
+        language: system
+        pass_filenames: false
+        always_run: true
+    -   id: coverage-check
+        name: Check coverage
+        entry: coverage report
+        args:
+            - --fail-under=60
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
