@@ -26,14 +26,8 @@ repos:
     -   id: check-json
 -   repo: local
     hooks:
-    -   id: pytest-check
-        name: pytest-check
-        entry: pytest
-        language: system
-        pass_filenames: false
-        always_run: true
     -   id: coverage-run
-        name: Run coverage
+        name: Run test coverage
         entry: coverage run --source=. -m pytest
         language: system
         pass_filenames: false
