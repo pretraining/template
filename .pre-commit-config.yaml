@@ -24,6 +24,10 @@ repos:
     -   id: sort-simple-yaml
     -   id: requirements-txt-fixer
     -   id: check-json
+-   repo: https://github.com/PyCQA/prospector
+    rev: 1.1.7 # The version of Prospector to use, at least 1.1.7
+    hooks:
+    -   id: prospector
 -   repo: local
     hooks:
     -   id: pytest-check
