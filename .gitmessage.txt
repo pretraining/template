@@ -1,24 +1,22 @@
-# 제목은 아래에 작성
-##### 제목은 최대 50 글자까지만 입력 ############## -> |
+# head (max 50 chars) -------------------------50^
+[lang] type: Message 
+# ex) [shell] feat: Add git action script
+# body (max 72 chars) -----------------------------------------------72^
+- 작업 내역 1
+- 작업 내역 2
 
-# ([언어]) <타입> 꼬릿말 
-# ex) .py 파일의 경우, feat: Add tokenizer utils
-# ex) 그 외, [shell] feat: Add git action script
-
-# 본문은 아래에 작성
-######## 본문은 한 줄에 최대 72 글자까지만 입력 ########################### -> |
-
+Refs:
 # 꼬릿말은 다음과 같이 작성: ex) Refs: #이슈 번호
 
 
 # --- COMMIT END ---
-# [언어] 리스트
-#   python: Python으로 개발했을 경우, 언어를 입력하지 않는다.
+# `[lang]` list
+#   python: Python으로 개발할 경우, e.g. [python]
 #   shell : Shell script의 수정만 존재할 경우, e.g. [shell]
 #   git   : README, .gitignore 등 git 관련 파일을 작성할 경우 [git]
 #   mixed: 여러 언어로 개발사항 또는 수정사항이 있을 경우, e.g. [mixed]
 #   etc : 특정 언어와 관련이 없을 경우, e.g. [etc]
-# <타입> 리스트
+# `type:` list
 #   feat    : 기능 (새로운 기능)
 #   fix     : 버그 (버그 수정)
 #   refactor: 리팩토링
