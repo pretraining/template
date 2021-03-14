@@ -13,7 +13,7 @@ repos:
     
       - id: set-test-env
         name: set-test-env
-        entry: pip3 install pytest==6.2.1 pytest-cov==2.10.1 pytest_xdist==2.2.0 pylint==2.7.2
+        entry: make set-test
         language: system
         pass_filenames: false
         always_run: true
