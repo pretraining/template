@@ -1,4 +1,5 @@
 
+all: set-git set-pre-commit set-test set-pipreqs
 dev-env: set-git set-pre-commit set-test set-pipreqs
 dep: extract-requirements
 test: pytest
@@ -23,7 +24,7 @@ extract-requirements:
 	pipreqs --force --savepath requirements.txt src
 
 pytest:
-	py.test -o log_cli=true -n 1 --cov-report term-missing tests/
+	pytest -o log_cli=true -n 1 --cov-report term-missing tests/
 
 #####  clean  #####
 clean-pyc:

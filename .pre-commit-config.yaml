@@ -2,15 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:  
   - repo: local
-    hooks:
-      - id: install-requirements
-        name: install-requirements
-        entry: pip3 install -r requirements.txt
-        language: system
-        pass_filenames: false
-        always_run: true
-        verbose: true
-    
+    hooks:      
       - id: set-test-env
         name: set-test-env
         entry: make set-test
