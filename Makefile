@@ -29,6 +29,9 @@ extract-requirements:
 pytest:
 	pytest -o log_cli=true -n 1 --cov-report term-missing tests/
 
+check:
+	pre-commit run -a
+
 #####  clean  #####
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +

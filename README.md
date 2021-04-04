@@ -11,6 +11,12 @@ $ make set-git
 - ex) 그 외, [shell] feat: Add git action script
 
 ## How to use pre-commit
+### Installation
 ```bash
-$ make set-test
+$ make all
+```
+
+### Execution
+```bash
+$ make check
 ```
