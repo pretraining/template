@@ -1,6 +1,6 @@
 
-all: set-git set-pre-commit set-test set-pipreqs
-dev-env: set-git set-pre-commit set-test set-pipreqs
+all: set-git set-pre-commit set-lint set-test set-pipreqs
+dev-env: set-git set-pre-commit set-lint set-test set-pipreqs
 dep: extract-requirements
 test: pytest
 clean: clean-pyc clean-test
@@ -12,6 +12,9 @@ set-git:
 set-pre-commit:
 	pip3 install --no-cache-dir pre-commit==2.11.1
 	pre-commit install
+
+set-lint:
+	pip3 install pylint==2.7.4
 
 set-test:
 	pip3 install --no-cache-dir pytest==6.2.1 pytest-cov==2.10.1 pytest_xdist==2.2.0
@@ -25,6 +28,9 @@ extract-requirements:
 
 pytest:
 	pytest -o log_cli=true -n 1 --cov-report term-missing tests/
+
+check:
+	pre-commit run -a
 
 #####  clean  #####
 clean-pyc:
